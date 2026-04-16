@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="item" format=3 uid="uid://b640gd0s8iwu7"]
+
+[ext_resource type="PackedScene" uid="uid://bvpccg3rqb8on" path="res://assets/3D/pickable/apple.blend" id="1_16y42"]
+[ext_resource type="Texture2D" uid="uid://cn0pwci3glku2" path="res://sources/inventory/item_icons/png/apple.png" id="1_jaj3q"]
+[ext_resource type="Script" uid="uid://cp7vcgvu32xl" path="res://sources/inventory/scripts/item_resource.gd" id="1_jhwxc"]
+
+[resource]
+script = ExtResource("1_jhwxc")
+id = 3
+_name = "Apple"
+description = "It's an apple"
+type = "Consumable"
+rarity = "Meh"
+icon = ExtResource("1_jaj3q")
+dropped_model = ExtResource("1_16y42")
+is_stackable = true
+max_stack_number = 16
+metadata/_custom_type_script = "uid://cp7vcgvu32xl"

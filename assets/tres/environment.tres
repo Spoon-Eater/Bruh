@@ -1,0 +1,17 @@
+[gd_resource type="Environment" format=3 uid="uid://bmw8m7yno7gwj"]
+
+[ext_resource type="Texture2D" uid="uid://di1c36tt60ud5" path="res://assets/2D/Skyboxes/Epic_GloriousPink_EquiRect.png" id="1_t0tgj"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xcc68"]
+panorama = ExtResource("1_t0tgj")
+
+[sub_resource type="Sky" id="Sky_uen51"]
+sky_material = SubResource("PanoramaSkyMaterial_xcc68")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_uen51")
+tonemap_mode = 3
+sdfgi_enabled = true
+glow_enabled = true
+glow_blend_mode = 0

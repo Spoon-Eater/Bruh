@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://bs4hyao54ib6a"]
+
+[ext_resource type="Environment" uid="uid://bmw8m7yno7gwj" path="res://assets/tres/environment.tres" id="1_wjd8h"]
+[ext_resource type="Material" uid="uid://dq440p5rjx5df" path="res://assets/2D/Textures/kenney_prototype-textures/grid.tres" id="2_sqdjk"]
+[ext_resource type="Texture2D" uid="uid://kb31kw52sn6o" path="res://assets/2D/Textures/kenney_prototype-textures/Green/texture_09.png" id="3_ess2g"]
+[ext_resource type="PackedScene" uid="uid://do5w13e4kekyb" path="res://sources/Player/player.tscn" id="4_73c7u"]
+[ext_resource type="PackedScene" uid="uid://jp38e7p6grec" path="res://sources/World/Harvestable/tree1.tscn" id="5_hmq45"]
+[ext_resource type="PackedScene" uid="uid://c4oeimgnmd8b5" path="res://sources/World/Harvestable/rocks1.tscn" id="6_ngl0r"]
+[ext_resource type="PackedScene" uid="uid://fjlj25a4cuwi" path="res://sources/World/NPC/npc_test.tscn" id="7_nfgxx"]
+[ext_resource type="PackedScene" uid="uid://dicpyav24qq4f" path="res://sources/inventory/scenes/dropped_loot.tscn" id="8_jum2s"]
+[ext_resource type="Resource" uid="uid://b640gd0s8iwu7" path="res://sources/inventory/scripts/item_resources/apple.tres" id="11_nlm58"]
+[ext_resource type="Resource" uid="uid://cehiv7uwdfp7g" path="res://sources/inventory/scripts/item_resources/rock.tres" id="11_rv6kh"]
+[ext_resource type="Resource" uid="uid://cdyd7h6tffkix" path="res://sources/inventory/scripts/item_resources/wooden_axe.tres" id="12_nki7c"]
+[ext_resource type="Resource" uid="uid://cuwsyjxg31ym4" path="res://sources/inventory/scripts/item_resources/wood_log.tres" id="13_nki7c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnlm5"]
+albedo_texture = ExtResource("3_ess2g")
+uv1_triplanar = true
+
+[node name="World" type="Node" unique_id=468041053]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=882085396]
+transform = Transform3D(-0.55358, 0.356067, -0.752838, -0.289685, 0.765206, 0.574928, 0.780789, 0.536355, -0.320456, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1316403041]
+environment = ExtResource("1_wjd8h")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1451140498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+use_collision = true
+
+[node name="Ground2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1275233038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7684, -0.5, 0)
+size = Vector3(13.6813, 1, 29.6777)
+material = ExtResource("2_sqdjk")
+
+[node name="Ground" type="CSGBox3D" parent="CSGCombiner3D" unique_id=771184159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.36674, -0.5, 0)
+size = Vector3(25.396, 1, 29.6777)
+material = ExtResource("2_sqdjk")
+
+[node name="step test" type="CSGBox3D" parent="CSGCombiner3D" unique_id=731444155]
+transform = Transform3D(0.969329, 0, -0.245765, 0, 1, 0, 0.245765, 0, 0.969329, -15.7018, 0.219609, -0.612395)
+size = Vector3(1, 0.5, 7.16309)
+
+[node name="ramp" type="CSGPolygon3D" parent="CSGCombiner3D" unique_id=613174320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3141, 0, 11.1356)
+polygon = PackedVector2Array(-3, 0, -3, 1, 1, 1, 4, 0)
+depth = 4.0
+material = SubResource("StandardMaterial3D_nnlm5")
+
+[node name="environement stuff" type="Node3D" parent="." unique_id=1394301805]
+
+[node name="tree1" parent="environement stuff" unique_id=217051648 instance=ExtResource("5_hmq45")]
+transform = Transform3D(0.862673, 0, 0.505763, 0, 1, 0, -0.505763, 0, 0.862673, -6.16098, 0, -7.31918)
+
+[node name="tree2" parent="environement stuff" unique_id=1536071575 instance=ExtResource("5_hmq45")]
+transform = Transform3D(0.864231, 0, -0.503095, 0, 1, 0, 0.503095, 0, 0.864231, -2.50318, 0, -10.4961)
+
+[node name="tree3" parent="environement stuff" unique_id=1395808002 instance=ExtResource("5_hmq45")]
+transform = Transform3D(-0.987214, 0, -0.159399, 0, 1, 0, 0.159399, 0, -0.987214, -4.45013, 0, -10.907)
+
+[node name="tree4" parent="environement stuff" unique_id=412313385 instance=ExtResource("5_hmq45")]
+transform = Transform3D(-0.236431, 0, -0.971648, 0, 1, 0, 0.971648, 0, -0.236431, -2.32184, 0, -7.15035)
+
+[node name="tree5" parent="environement stuff" unique_id=1134250252 instance=ExtResource("5_hmq45")]
+transform = Transform3D(-0.710431, 0, 0.703767, 0, 1, 0, -0.703767, 0, -0.710431, -0.448785, 0, -9.28811)
+
+[node name="rocks1" parent="environement stuff" unique_id=1573300608 instance=ExtResource("6_ngl0r")]
+transform = Transform3D(0.470473, 0, -0.882414, 0, 1, 0, 0.882414, 0, 0.470473, 5.96094, 0, -1.72783)
+
+[node name="rocks2" parent="environement stuff" unique_id=938170301 instance=ExtResource("6_ngl0r")]
+transform = Transform3D(0.244841, 0, 0.866056, 0.0157344, 0.899851, -0.00444824, -0.865913, 0.0163511, 0.2448, 5.96094, 0, 3.74506)
+
+[node name="rocks3" parent="environement stuff" unique_id=1483678638 instance=ExtResource("6_ngl0r")]
+transform = Transform3D(-0.0716017, 0, -1.26798, 0, 1.27, 0, 1.26798, 0, -0.0716017, 7.70931, 0, 0.314712)
+
+[node name="You" parent="." unique_id=539292055 instance=ExtResource("4_73c7u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.91937, 1, 4.5619)
+
+[node name="NPC_test" parent="." unique_id=102870768 instance=ExtResource("7_nfgxx")]
+transform = Transform3D(-0.624779, 0, -0.780801, 0, 1, 0, 0.780801, 0, -0.624779, 6.87314, 0, 10.0779)
+
+[node name="dropped_loot" parent="." unique_id=2012690912 instance=ExtResource("8_jum2s")]
+item_quantity = 15
+current_item = ExtResource("11_nlm58")
+
+[node name="dropped_loot5" parent="." unique_id=1465425590 instance=ExtResource("8_jum2s")]
+transform = Transform3D(0.413694, 0, -0.910416, 0, 1, 0, 0.910416, 0, 0.413694, 2.4897847, 0, 8.628989)
+item_quantity = 15
+current_item = ExtResource("11_nlm58")
+
+[node name="dropped_loot2" parent="." unique_id=1093149254 instance=ExtResource("8_jum2s")]
+transform = Transform3D(0.71215105, 0, -0.7020265, 0, 1, 0, 0.7020265, 0, 0.71215105, -4.378941, -2.3841858e-07, -5.3053923)
+item_quantity = 12
+current_item = ExtResource("13_nki7c")
+
+[node name="dropped_loot3" parent="." unique_id=126328732 instance=ExtResource("8_jum2s")]
+transform = Transform3D(0.413694, 0, -0.910416, 0, 1, 0, 0.910416, 0, 0.413694, 21.203259, 0, -6.793639)
+item_quantity = 50
+current_item = ExtResource("11_rv6kh")
+
+[node name="dropped_loot12" parent="." unique_id=468613458 instance=ExtResource("8_jum2s")]
+transform = Transform3D(0.413694, 0, -0.910416, 0, 1, 0, 0.910416, 0, 0.413694, 24.582716, 0, -2.293047)
+item_quantity = 50
+current_item = ExtResource("11_rv6kh")
+
+[node name="dropped_loot13" parent="." unique_id=1993412777 instance=ExtResource("8_jum2s")]
+transform = Transform3D(0.413694, 0, -0.910416, 0, 1, 0, 0.910416, 0, 0.413694, 25.415913, 0, -9.368548)
+item_quantity = 26
+current_item = ExtResource("11_rv6kh")
+
+[node name="dropped_loot14" parent="." unique_id=1281348273 instance=ExtResource("8_jum2s")]
+transform = Transform3D(0.413694, 0, -0.910416, 0, 1, 0, 0.910416, 0, 0.413694, 17.796455, 0, -2.8364744)
+item_quantity = 26
+current_item = ExtResource("11_rv6kh")
+
+[node name="dropped_loot16" parent="." unique_id=1482646086 instance=ExtResource("8_jum2s")]
+transform = Transform3D(-0.6577146, 0, -0.7532673, 0, 1, 0, 0.7532673, 0, -0.6577146, 7.220272, 0, -11.012892)
+item_quantity = 12
+current_item = ExtResource("11_rv6kh")
+
+[node name="dropped_loot15" parent="." unique_id=682297116 instance=ExtResource("8_jum2s")]
+transform = Transform3D(0.413694, 0, -0.910416, 0, 1, 0, 0.910416, 0, 0.413694, 18.618616, 0, -9.52809)
+item_quantity = 26
+current_item = ExtResource("11_rv6kh")
+
+[node name="dropped_loot4" parent="." unique_id=406748673 instance=ExtResource("8_jum2s")]
+transform = Transform3D(-0.9546045, 0, -0.29787642, 0, 1, 0, 0.29787642, 0, -0.9546045, 19.27838, 0, 1.1530623)
+current_item = ExtResource("12_nki7c")
+
+[node name="dropped_loot6" parent="." unique_id=64321223 instance=ExtResource("8_jum2s")]
+transform = Transform3D(0.4697196, 0, -0.8828157, 0, 1, 0, 0.8828157, 0, 0.4697196, 20.883432, 0, 7.871264)
+current_item = ExtResource("12_nki7c")
+
+[node name="dropped_loot7" parent="." unique_id=1879585200 instance=ExtResource("8_jum2s")]
+transform = Transform3D(0.4697196, 0, -0.8828157, 0, 1, 0, 0.8828157, 0, 0.4697196, 16.000364, 0, 11.7589245)
+current_item = ExtResource("12_nki7c")
+
+[node name="dropped_loot8" parent="." unique_id=812135499 instance=ExtResource("8_jum2s")]
+transform = Transform3D(0.4697196, 0, -0.8828157, 0, 1, 0, 0.8828157, 0, 0.4697196, 20.83745, 0, 13.078144)
+current_item = ExtResource("12_nki7c")
+
+[node name="dropped_loot9" parent="." unique_id=1559495001 instance=ExtResource("8_jum2s")]
+transform = Transform3D(0.4697196, 0, -0.8828157, 0, 1, 0, 0.8828157, 0, 0.4697196, 23.005623, 0, 11.469134)
+current_item = ExtResource("12_nki7c")
+
+[node name="dropped_loot10" parent="." unique_id=1574383460 instance=ExtResource("8_jum2s")]
+transform = Transform3D(0.4697196, 0, -0.8828157, 0, 1, 0, 0.8828157, 0, 0.4697196, 24.59411, 0, 7.3329964)
+current_item = ExtResource("12_nki7c")
+
+[node name="dropped_loot11" parent="." unique_id=1375788974 instance=ExtResource("8_jum2s")]
+transform = Transform3D(0.4697196, 0, -0.8828157, 0, 1, 0, 0.8828157, 0, 0.4697196, 15.556263, 0, 8.060144)
+current_item = ExtResource("12_nki7c")

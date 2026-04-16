@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bea3dndy6iadm"]
+
+[ext_resource type="Script" uid="uid://du68bqmapp32a" path="res://sources/inventory/scripts/rarity_particles.gd" id="1_uyccg"]
+
+[sub_resource type="Curve" id="Curve_gk6by"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.834862, 0.802198), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_lx2hb"]
+curve = SubResource("Curve_gk6by")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uyccg"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 90, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 0.25, 0)
+scale_min = 0.1
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_lx2hb")
+turbulence_enabled = true
+turbulence_noise_strength = 10.0
+turbulence_noise_scale = 75.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kcrgc"]
+load_path = "res://.godot/imported/Flare00.PNG-3c0e4ebe033449dcd6f89cdeceeca233.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plldu"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_kcrgc")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_p1ecu"]
+material = SubResource("StandardMaterial3D_plldu")
+
+[sub_resource type="Curve" id="Curve_pgs3w"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.49697, 0.967033), -1.25528, -1.25528, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_238g2"]
+curve = SubResource("Curve_pgs3w")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a0asp"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+gravity = Vector3(0, -0.5, 0)
+scale_min = 0.45
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_238g2")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fvwha"]
+load_path = "res://.godot/imported/ray.svg-0ed70f77a4a93720263357a133f21218.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_820ws"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_fvwha")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_hiotc"]
+material = SubResource("StandardMaterial3D_820ws")
+size = Vector2(0.2, 3.44)
+
+[node name="Particles" type="Node3D" unique_id=587197674]
+script = ExtResource("1_uyccg")
+
+[node name="floor" type="GPUParticles3D" parent="." unique_id=474392408]
+amount = 12
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_uyccg")
+draw_pass_1 = SubResource("QuadMesh_p1ecu")
+
+[node name="ray" type="GPUParticles3D" parent="." unique_id=1107185080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.778496, 0)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_a0asp")
+draw_pass_1 = SubResource("QuadMesh_hiotc")

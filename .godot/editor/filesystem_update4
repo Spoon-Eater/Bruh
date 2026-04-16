@@ -1,0 +1,5 @@
+res://sources/inventory/scenes/inventory_slot.tscn
+res://assets/tres/environment.tres
+res://sources/inventory/scripts/inventory.gd
+res://sources/inventory/scripts/dropped_loot.gd
+res://sources/inventory/scripts/inventory_slot.gd

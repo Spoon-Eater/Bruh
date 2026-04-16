@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://p5ckimqokb4q"]
+
+[ext_resource type="FontFile" uid="uid://c0i4h7fqk2vfd" path="res://assets/2D/font.ttf" id="1_3guke"]
+[ext_resource type="Script" uid="uid://cnkk17wrma0d4" path="res://sources/UI/Pause/pause_menu.gd" id="1_dp4gn"]
+
+[node name="Pause_Menu" type="CenterContainer"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -52.0
+offset_right = 54.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dp4gn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Unpause" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3guke")
+theme_override_font_sizes/font_size = 33
+text = "Unpause"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3guke")
+theme_override_font_sizes/font_size = 27
+text = "Quit"
+expand_icon = true
+
+[connection signal="pressed" from="VBoxContainer/Unpause" to="." method="unpause_button"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="quit"]

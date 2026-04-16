@@ -1,0 +1,37 @@
+Bruh:
+	# fix the wrong rarity paticles color and the rarity png in inventory
+	# inventory slot tooltip
+	# pickup item only if the player is looking at it + visual hint to show when we can pick an item up
+	# check for issues with the pickup system like a pickup exceding the max_stack_number
+	# visual feedback upon picking up the items
+	# full inventory_popup
+	draggable items
+
+	if the same item is dropped they merge together increasing the number of them
+		with the number showed in the 3D label
+	crouch stairs stepping
+	crouch
+	slide run+crouch
+	les traits de speed quand on court
+	fond des slots de l'inv de la couleur de la rareté
+	Axe/Pickaxe
+	Chop Chop goes brrr
+	bonk rocks
+	image de fond des slot de la couleur de la rareté
+	craft
+	sac pour porter plus de trucs
+	pew pew bow
+	Craft bigger
+	iron
+	Smelt
+	pew pew gun
+	make tree rok n stuff bigger and smaller random and rotate it
+	upgrade tools
+	bow goes pew pew more
+	sword goes swing swing
+	more things to swing swing and pew pew
+	make enemys
+	make em's better than u
+	build house so u don't die
+	JUICE it up
+	make an item to plane cause fun

@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://dicpyav24qq4f"]
+
+[ext_resource type="Script" uid="uid://bcweglwbdwe2a" path="res://sources/inventory/scripts/dropped_loot.gd" id="1_i6vfg"]
+[ext_resource type="Texture2D" uid="uid://dryggr8bqyio4" path="res://assets/2D/VFX/ray.svg" id="2_osjru"]
+[ext_resource type="PackedScene" uid="uid://bea3dndy6iadm" path="res://sources/inventory/scenes/particles.tscn" id="3_4slng"]
+[ext_resource type="FontFile" uid="uid://c0i4h7fqk2vfd" path="res://assets/2D/font.ttf" id="3_mdtyt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6nls2"]
+radius = 4.2
+
+[sub_resource type="Curve" id="Curve_x1xn4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.49697, 0.967033), -1.25528, -1.25528, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ix0a1"]
+curve = SubResource("Curve_x1xn4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ns0qe"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+gravity = Vector3(0, 0, 0)
+scale_min = 0.45
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_ix0a1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvliw"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.3816, 0.828486, 0.207562, 1)
+albedo_texture = ExtResource("2_osjru")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_nypsw"]
+material = SubResource("StandardMaterial3D_qvliw")
+size = Vector2(0.2, 3.44)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v2g16"]
+size = Vector3(1.051, 0.817, 1.051)
+
+[sub_resource type="Animation" id="Animation_7pfyj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshPos:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshPos:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i6vfg"]
+resource_name = "partly_picked_up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshPos:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.061188754, 0.12237751, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.02265504, 0), Vector3(0, 0.083, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshPos:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.061188754, 0.12237751, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.765, 0.765, 0.765), Vector3(1.135, 1.135, 1.135), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7pfyj"]
+_data = {
+&"RESET": SubResource("Animation_7pfyj"),
+&"partly_picked_up": SubResource("Animation_i6vfg")
+}
+
+[node name="dropped_loot" type="RigidBody3D" unique_id=2012690912 groups=["items"]]
+transform = Transform3D(0.413694, 0, -0.910416, 0, 1, 0, 0.910416, 0, 0.413694, 0, 0, 0)
+collision_layer = 4
+mass = 10.0
+script = ExtResource("1_i6vfg")
+
+[node name="MeshPos" type="Marker3D" parent="." unique_id=247009204]
+transform = Transform3D(1, 0, -3.8957285e-08, 0, 1, 0, 3.8957285e-08, 0, 1, 0, 0, 0)
+
+[node name="Pickup_Range" type="Area3D" parent="." unique_id=1117606709]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickup_Range" unique_id=964285202]
+shape = SubResource("SphereShape3D_6nls2")
+
+[node name="Pickup_Ray" type="GPUParticles3D" parent="." unique_id=24277536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.778496, 0)
+visible = false
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_ns0qe")
+draw_pass_1 = SubResource("QuadMesh_nypsw")
+
+[node name="3D_label" type="Label3D" parent="." unique_id=1894516968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3135589, 0)
+billboard = 2
+double_sided = false
+text = "Test"
+font = ExtResource("3_mdtyt")
+font_size = 97
+outline_size = 42
+
+[node name="quantity_label" type="Label3D" parent="." unique_id=1615223529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7221934, 0)
+pixel_size = 0.004
+offset = Vector2(0, 60.915)
+billboard = 2
+double_sided = false
+text = "x99"
+font = ExtResource("3_mdtyt")
+font_size = 40
+outline_size = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1981128659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.410144, 0)
+shape = SubResource("BoxShape3D_v2g16")
+
+[node name="Particles" parent="." unique_id=587197674 instance=ExtResource("3_4slng")]
+transform = Transform3D(0.413694, 0, 0.910416, 0, 1, 0, -0.910416, 0, 0.413694, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=723354017]
+libraries/ = SubResource("AnimationLibrary_7pfyj")
+
+[connection signal="body_entered" from="Pickup_Range" to="." method="pickup_zone_entered"]
+[connection signal="body_exited" from="Pickup_Range" to="." method="pickup_zone_exited"]

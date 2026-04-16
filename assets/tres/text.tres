@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://8f7y31regh8b"]
+
+[ext_resource type="FontFile" uid="uid://c0i4h7fqk2vfd" path="res://assets/2D/font.ttf" id="1_gbxwc"]
+
+[resource]
+font = ExtResource("1_gbxwc")
+font_size = 23
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 1)

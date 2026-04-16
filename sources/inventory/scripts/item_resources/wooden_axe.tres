@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="item" format=3 uid="uid://cdyd7h6tffkix"]
+
+[ext_resource type="Script" uid="uid://cp7vcgvu32xl" path="res://sources/inventory/scripts/item_resource.gd" id="1_qedp3"]
+[ext_resource type="Texture2D" uid="uid://bbvwu37f80ady" path="res://sources/inventory/item_icons/png/wooden_axe.png" id="1_ujh1w"]
+[ext_resource type="PackedScene" uid="uid://domgxpcwedqpc" path="res://assets/3D/Tools/wooden_axe.blend" id="1_v3hm5"]
+
+[resource]
+script = ExtResource("1_qedp3")
+id = 4
+_name = "Wooden Axe"
+description = "Axe of woood"
+type = "Tools"
+rarity = "I mean it's alright"
+icon = ExtResource("1_ujh1w")
+dropped_model = ExtResource("1_v3hm5")
+metadata/_custom_type_script = "uid://cp7vcgvu32xl"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="item" format=3 uid="uid://cehiv7uwdfp7g"]
+
+[ext_resource type="Texture2D" uid="uid://dsypefix0q1hn" path="res://sources/inventory/item_icons/png/rock.png" id="1_5pu3f"]
+[ext_resource type="PackedScene" uid="uid://bm74433xiaiew" path="res://assets/3D/pickable/rock.blend" id="1_c13g3"]
+[ext_resource type="Script" uid="uid://cp7vcgvu32xl" path="res://sources/inventory/scripts/item_resource.gd" id="1_e6n0g"]
+
+[resource]
+script = ExtResource("1_e6n0g")
+id = 2
+_name = "Rock"
+description = "This rock is a rock"
+type = "Resource"
+rarity = "Now we are talkin"
+icon = ExtResource("1_5pu3f")
+dropped_model = ExtResource("1_c13g3")
+is_stackable = true
+max_stack_number = 50
+metadata/_custom_type_script = "uid://cp7vcgvu32xl"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="item" format=3 uid="uid://jqkete66xnjp"]
+
+[ext_resource type="Texture2D" uid="uid://bfwr7bwxl7ach" path="res://assets/2D/Textures/kenney_prototype-textures/Orange/texture_11.png" id="1_i8xn8"]
+[ext_resource type="Script" uid="uid://cp7vcgvu32xl" path="res://sources/inventory/scripts/item_resource.gd" id="2_aj26f"]
+
+[resource]
+script = ExtResource("2_aj26f")
+_name = "empty_slot"
+description = "<NULL>"
+type = "Resource"
+rarity = "YES"
+icon = ExtResource("1_i8xn8")
+max_stack_number = -1
+metadata/_custom_type_script = "uid://cp7vcgvu32xl"

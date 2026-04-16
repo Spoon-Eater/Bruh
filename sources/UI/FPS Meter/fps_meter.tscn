@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://br6ogw8ta5nfk"]
+
+[ext_resource type="Script" uid="uid://cs25cjowve5ku" path="res://sources/UI/FPS Meter/fps_meter.gd" id="1_g3s3t"]
+[ext_resource type="LabelSettings" uid="uid://c8ur1cawg4lcm" path="res://assets/tres/title.tres" id="1_s65ml"]
+
+[node name="Fps_Meter" type="MarginContainer" unique_id=1194257195]
+process_mode = 3
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_g3s3t")
+
+[node name="fps_label" type="Label" parent="." unique_id=86887114]
+layout_mode = 2
+text = "Over 9000 FPS"
+label_settings = ExtResource("1_s65ml")
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true

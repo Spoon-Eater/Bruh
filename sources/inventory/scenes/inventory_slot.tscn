@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://3tj36qvnqqn2"]
+
+[ext_resource type="Script" uid="uid://db5u4htj3x8i3" path="res://sources/inventory/scripts/inventory_slot.gd" id="1_gyu7x"]
+[ext_resource type="StyleBox" uid="uid://ct4b4t2f4wf04" path="res://assets/tres/inventory_slot.tres" id="1_jjixf"]
+[ext_resource type="Texture2D" uid="uid://bqy4wups0uslx" path="res://sources/inventory/item_icons/png/wood_pickaxe.png" id="2_b5vsr"]
+[ext_resource type="Texture2D" uid="uid://b6bn7pjqrg6u2" path="res://assets/2D/VFX/Flare00.PNG" id="3_biww5"]
+[ext_resource type="LabelSettings" uid="uid://8f7y31regh8b" path="res://assets/tres/text.tres" id="3_m1p7g"]
+
+[node name="Inventory_Slot" type="Control" unique_id=299322121]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 7.5
+offset_right = 107.5
+offset_bottom = 100.0
+mouse_filter = 1
+script = ExtResource("1_gyu7x")
+
+[node name="Slot" type="MarginContainer" parent="." unique_id=842871528]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="SlotBorder" type="PanelContainer" parent="Slot" unique_id=1412714066]
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("1_jjixf")
+
+[node name="Rarity" type="TextureRect" parent="Slot/SlotBorder" unique_id=1440468386]
+layout_mode = 2
+texture = ExtResource("3_biww5")
+expand_mode = 1
+
+[node name="icon" type="TextureRect" parent="Slot/SlotBorder" unique_id=259883788]
+layout_mode = 2
+texture = ExtResource("2_b5vsr")
+expand_mode = 1
+
+[node name="QuantityLabel" type="Label" parent="." unique_id=1860115356]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -30.0
+offset_right = -5.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x99"
+label_settings = ExtResource("3_m1p7g")
+horizontal_alignment = 2
+
+[node name="Details_Panel" type="VBoxContainer" parent="." unique_id=1626629739]
+top_level = true
+layout_mode = 0
+offset_left = 114.375
+offset_right = 289.0
+offset_bottom = 108.0
+theme_override_constants/separation = -8
+
+[node name="Item_Name" type="Label" parent="Details_Panel" unique_id=140442713]
+layout_mode = 2
+text = "Name"
+label_settings = ExtResource("3_m1p7g")
+
+[node name="Item_Rarity" type="Label" parent="Details_Panel" unique_id=847838407]
+layout_mode = 2
+text = "Rarity"
+label_settings = ExtResource("3_m1p7g")
+
+[node name="Item_Description" type="Label" parent="Details_Panel" unique_id=598234918]
+layout_mode = 2
+text = "Description"
+label_settings = ExtResource("3_m1p7g")
+
+[node name="Item_Button" type="Button" parent="." unique_id=1261620658]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+button_mask = 3
+flat = true
+
+[connection signal="button_down" from="Item_Button" to="." method="_on_item_button_pressed"]
+[connection signal="button_up" from="Item_Button" to="." method="_on_item_button_button_up"]
+[connection signal="mouse_entered" from="Item_Button" to="." method="_on_item_button_mouse_entered"]
+[connection signal="mouse_exited" from="Item_Button" to="." method="_on_item_button_mouse_exited"]

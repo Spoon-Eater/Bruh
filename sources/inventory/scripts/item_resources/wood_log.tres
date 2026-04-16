@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="item" format=3 uid="uid://cuwsyjxg31ym4"]
+
+[ext_resource type="PackedScene" uid="uid://d08j88236haj7" path="res://assets/3D/pickable/wood_log.blend" id="1_cps73"]
+[ext_resource type="Script" uid="uid://cp7vcgvu32xl" path="res://sources/inventory/scripts/item_resource.gd" id="1_uxkni"]
+[ext_resource type="Texture2D" uid="uid://d28dcr2u2bp0w" path="res://sources/inventory/item_icons/png/woodd_log.png" id="1_xsq6a"]
+
+[resource]
+script = ExtResource("1_uxkni")
+id = 1
+_name = "Wood Log"
+description = "This is wood in a log"
+type = "Resource"
+rarity = "Shit"
+icon = ExtResource("1_xsq6a")
+dropped_model = ExtResource("1_cps73")
+is_stackable = true
+max_stack_number = 50
+metadata/_custom_type_script = "uid://cp7vcgvu32xl"

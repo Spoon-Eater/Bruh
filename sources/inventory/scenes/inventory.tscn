@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://ubdoppig4vev"]
+
+[ext_resource type="Script" uid="uid://cp4x7okdbjhd7" path="res://sources/inventory/scripts/inventory_ui.gd" id="1_igvvp"]
+[ext_resource type="Script" uid="uid://co18sfeisiwli" path="res://sources/inventory/scripts/inventory.gd" id="2_yb1ju"]
+[ext_resource type="FontFile" uid="uid://c0i4h7fqk2vfd" path="res://assets/2D/font.ttf" id="3_k5ft7"]
+[ext_resource type="LabelSettings" uid="uid://c8ur1cawg4lcm" path="res://assets/tres/title.tres" id="4_mk2ro"]
+
+[sub_resource type="Animation" id="Animation_gv1ko"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m0b3t"]
+resource_name = "open_close"
+length = 0.08
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TabContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.061008684, 0.08),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-557.17, 0), Vector2(13.468, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lx2ek"]
+_data = {
+&"RESET": SubResource("Animation_gv1ko"),
+&"open_close": SubResource("Animation_m0b3t")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_noeuk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ls6j8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nq3k2"]
+
+[node name="Inventory" type="Control" unique_id=319595418]
+custom_minimum_size = Vector2(554, 720)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -726.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_igvvp")
+
+[node name="inventory_manager" type="Node" parent="." unique_id=1993441716]
+script = ExtResource("2_yb1ju")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1388515269]
+libraries/ = SubResource("AnimationLibrary_lx2ek")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1509684131]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 253.99983
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_k5ft7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/panel = SubResource("StyleBoxEmpty_noeuk")
+current_tab = 0
+drag_to_rearrange_enabled = true
+
+[node name="Inventory" type="MarginContainer" parent="TabContainer" unique_id=623322498]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+metadata/_tab_index = 0
+
+[node name="PanelContainer" type="VBoxContainer" parent="TabContainer/Inventory" unique_id=1310896100]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Inventory/PanelContainer" unique_id=836556960]
+layout_mode = 2
+size_flags_vertical = 0
+text = "INVENTORY"
+label_settings = ExtResource("4_mk2ro")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Inventory/PanelContainer" unique_id=1813918740]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ls6j8")
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Inventory/PanelContainer" unique_id=2083480165]
+layout_mode = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 4
+
+[node name="Equipement" type="MarginContainer" parent="TabContainer" unique_id=446912227]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+metadata/_tab_index = 1
+
+[node name="PanelContainer" type="VBoxContainer" parent="TabContainer/Equipement" unique_id=1497164746]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Equipement/PanelContainer" unique_id=1133674045]
+layout_mode = 2
+size_flags_vertical = 0
+text = "EQUIPEMENT"
+label_settings = ExtResource("4_mk2ro")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Equipement/PanelContainer" unique_id=1097189251]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nq3k2")
+
+[node name="Craft" type="MarginContainer" parent="TabContainer" unique_id=1380187427]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+metadata/_tab_index = 2
+
+[node name="PanelContainer" type="VBoxContainer" parent="TabContainer/Craft" unique_id=1273213536]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Craft/PanelContainer" unique_id=1133153691]
+layout_mode = 2
+size_flags_vertical = 0
+text = "CRAFT"
+label_settings = ExtResource("4_mk2ro")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Craft/PanelContainer" unique_id=1671060052]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nq3k2")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

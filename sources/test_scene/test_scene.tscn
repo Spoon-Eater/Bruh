@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://xbcjf6dbgjqf"]
+
+[ext_resource type="Script" uid="uid://d1sob5d1unnis" path="res://sources/test_scene/script/test_scene.gd" id="1_1wa0g"]
+[ext_resource type="PackedScene" uid="uid://dicpyav24qq4f" path="res://sources/inventory/scenes/dropped_loot.tscn" id="2_7wv1r"]
+[ext_resource type="PackedScene" uid="uid://bvpccg3rqb8on" path="res://assets/3D/pickable/apple.blend" id="3_tvl7i"]
+[ext_resource type="Texture2D" uid="uid://cn0pwci3glku2" path="res://sources/inventory/item_icons/png/apple.png" id="4_nm1ih"]
+[ext_resource type="Script" uid="uid://cp7vcgvu32xl" path="res://sources/inventory/scripts/item_resource.gd" id="5_swfni"]
+
+[sub_resource type="Resource" id="Resource_j5mp8"]
+script = ExtResource("5_swfni")
+id = 3
+_name = "Apple"
+type = "Consumable"
+rarity = "Shit"
+icon = ExtResource("4_nm1ih")
+dropped_model = ExtResource("3_tvl7i")
+metadata/_custom_type_script = "uid://cp7vcgvu32xl"
+
+[node name="test_scene" type="Node3D" unique_id=516295642]
+script = ExtResource("1_1wa0g")
+
+[node name="dropped_loot" parent="." unique_id=2012690912 instance=ExtResource("2_7wv1r")]
+item_quantity = 5
+current_item = SubResource("Resource_j5mp8")
