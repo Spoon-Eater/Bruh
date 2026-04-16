@@ -8,6 +8,9 @@ extends Control
 @onready var item_description = $Details_Panel/Item_Description
 @onready var item_rarity = $Details_Panel/Item_Rarity
 @onready var inventory_manager: Node = get_parent().get_parent().get_parent().get_parent().get_parent().inventory_manager
+@onready var player: CharacterBody3D = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_parent()#.item_picker
+
+const DROPPED_LOOT = preload("uid://dicpyav24qq4f")
 
 var hovering: bool = false
 var current_item = null
@@ -16,6 +19,8 @@ var hover_size = Vector2(120, 120)
 var default_size = Vector2(100, 100)
 
 var dragged: bool = false
+
+var qty: int = -1
 
 # hides everyting needed to be
 func _ready() -> void:
@@ -45,6 +50,7 @@ func set_empty_slot():
 	item_name.text = ""
 	item_description.text = ""
 	item_rarity.text = ""
+	qty = -1
 # same
 func set_item(new_item: item, quantity: int):
 	current_item = new_item
@@ -67,6 +73,7 @@ func set_item(new_item: item, quantity: int):
 	item_name.text = new_item._name
 	item_description.text = new_item.description
 	item_rarity.text = new_item.rarity
+	qty = quantity
 
 # check for a M1 click to show the slot menu
 func _on_item_button_pressed() -> void:
@@ -105,6 +112,19 @@ func _try_drop() -> void:
 		else:
 			set_empty_slot()
 			inventory_manager.update_a_slot(name.to_int(), preload("uid://jqkete66xnjp"), -1)
+	else: drop_item()
+	icon.top_level = false
+	icon.position = Vector2.ZERO
+	icon.size = Vector2(100, 100)
+
+func drop_item():
+	var dropping_item = DROPPED_LOOT.instantiate()
+	dropping_item.item_quantity = qty
+	dropping_item.current_item = current_item
+	get_tree().get_root().add_child(dropping_item)
+	dropping_item.global_transform = player.global_transform
+	set_empty_slot()
+	inventory_manager.update_a_slot(name.to_int(), preload("uid://jqkete66xnjp"), -1)
 	icon.top_level = false
 	icon.position = Vector2.ZERO
 	icon.size = Vector2(100, 100)

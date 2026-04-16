@@ -3,3 +3,5 @@ res://assets/tres/environment.tres
 res://sources/inventory/scripts/inventory.gd
 res://sources/inventory/scripts/dropped_loot.gd
 res://sources/inventory/scripts/inventory_slot.gd
+res://game goes brrr.txt
+res://sources/Player/player.tscn

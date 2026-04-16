@@ -5,7 +5,8 @@ Bruh:
 	# check for issues with the pickup system like a pickup exceding the max_stack_number
 	# visual feedback upon picking up the items
 	# full inventory_popup
-	draggable items
+	# draggable items
+	# dropping system
 
 	if the same item is dropped they merge together increasing the number of them
 		with the number showed in the 3D label
