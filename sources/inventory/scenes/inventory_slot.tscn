@@ -7,14 +7,14 @@
 [ext_resource type="LabelSettings" uid="uid://8f7y31regh8b" path="res://assets/tres/text.tres" id="3_m1p7g"]
 
 [node name="Inventory_Slot" type="Control" unique_id=299322121]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 7.5
-offset_right = 107.5
+offset_right = 100.0
 offset_bottom = 100.0
 mouse_filter = 1
 script = ExtResource("1_gyu7x")
+is_hotbar = null
 
 [node name="Slot" type="MarginContainer" parent="." unique_id=842871528]
 layout_mode = 1
@@ -61,6 +61,7 @@ label_settings = ExtResource("3_m1p7g")
 horizontal_alignment = 2
 
 [node name="Details_Panel" type="VBoxContainer" parent="." unique_id=1626629739]
+visible = false
 top_level = true
 layout_mode = 0
 offset_left = 114.375

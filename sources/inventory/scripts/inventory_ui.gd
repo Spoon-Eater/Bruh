@@ -3,10 +3,12 @@ extends Control
 @onready var Anim_P = $AnimationPlayer
 @onready var grid_container = $TabContainer/Inventory/PanelContainer/GridContainer
 @onready var inventory_manager: Node = $inventory_manager
+@onready var hotbar: Control = $hotbar
 
 func _ready() -> void:
 	self.hide()
 	inventory_manager.init_inventory()
+	hotbar.init_hotbar(inventory_manager)
 
 # animate the open/close of the inventory
 func open_close(trigger):

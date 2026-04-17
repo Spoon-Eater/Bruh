@@ -9,9 +9,7 @@
 [ext_resource type="Script" uid="uid://5d5b05qldjdx" path="res://sources/Player/scripts/notification.gd" id="6_pmig4"]
 [ext_resource type="LabelSettings" uid="uid://c8ur1cawg4lcm" path="res://assets/tres/title.tres" id="6_tt13m"]
 [ext_resource type="Texture2D" uid="uid://cda1qdrsbq8ls" path="res://assets/2D/icons/warning.png" id="7_i0f3y"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_i0f3y"]
-color = Color(1, 1, 1, 0)
+[ext_resource type="Texture2D" uid="uid://dqgqpdqmugpwh" path="res://assets/2D/icons/dropped.png" id="9_q3c3m"]
 
 [sub_resource type="Animation" id="Animation_q3c3m"]
 length = 0.001
@@ -25,31 +23,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Full_Inventory:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Full_Inventory:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_pmig4"]
@@ -59,11 +33,52 @@ step = 0.0001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Full_Inventory:visible")
+tracks/0/path = NodePath("Full_Inventory/PanelContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.2481, 3.25),
+"times": PackedFloat32Array(0, 2.7607756, 3.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Full_Inventory/PanelContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2379, 0.2858339, 2.7620096, 2.87892, 3.2223446),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(421.05, 0), Vector2(115.24402, 0), Vector2(140.975, 0), Vector2(140.975, 0), Vector2(124.41998, 0), Vector2(400.05, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Full_Inventory:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.2413, 3.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_q2fue"]
+resource_name = "item_dropped"
+length = 1.5
+step = 0.0001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dropped_Item:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4986328, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, true, false]
@@ -71,33 +86,39 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Full_Inventory:position")
+tracks/1/path = NodePath("Dropped_Item:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.25, 3.1911304, 3.1983893, 3.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1373, 1.1500001, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(305.87, -47.295), Vector2(-29.006, -47.295), Vector2(0, -47.295), Vector2(0, -47.295), Vector2(-28.955, -47.295), Vector2(320, -47.295)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Full_Inventory:rotation")
+tracks/2/path = NodePath("Dropped_Item/PanelContainer:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.25),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.14030658, 0.2196, 1.1499454, 1.2048498, 1.4946239),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(0, 0), Vector2(0, 24), Vector2(0, 0), Vector2(0, 0), Vector2(0, -13.535004), Vector2(0, 71.375)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q3c3m"]
 _data = {
 &"RESET": SubResource("Animation_q3c3m"),
-&"inventory_full": SubResource("Animation_pmig4")
+&"inventory_full": SubResource("Animation_pmig4"),
+&"item_dropped": SubResource("Animation_q2fue")
 }
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmig4"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_i0f3y"]
+color = Color(1, 1, 1, 0)
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_p4kxk"]
 dof_blur_far_distance = 5.0
@@ -107,7 +128,7 @@ dof_blur_amount = 0.08
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gxkk4"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_4q72s"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_q3c3m"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1957972855 groups=["Player"]]
 collision_layer = 2
@@ -132,58 +153,146 @@ grow_horizontal = 0
 
 [node name="Notification" type="Control" parent="HUD" unique_id=84067988]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_pmig4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/Notification" unique_id=872815472]
+libraries/ = SubResource("AnimationLibrary_q3c3m")
+
+[node name="Dropped_Item" type="Control" parent="HUD/Notification" unique_id=49641492]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -150.41
+offset_right = 68.0
+offset_bottom = 29.590637
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/Notification/Dropped_Item" unique_id=1907395766]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -18.62532
+offset_right = 68.0
+offset_bottom = 214.37498
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pmig4")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="HUD/Notification/Dropped_Item/PanelContainer" unique_id=693812725]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Notification/Dropped_Item/PanelContainer/HBoxContainer" unique_id=1191910261]
+layout_mode = 2
+texture = ExtResource("9_q3c3m")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="HUD/Notification/Dropped_Item/PanelContainer/HBoxContainer" unique_id=35234196]
+layout_mode = 2
+text = "Item Dropped"
+label_settings = ExtResource("6_tt13m")
+horizontal_alignment = 1
+
+[node name="Full_Inventory" type="Control" parent="HUD/Notification" unique_id=254327918]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -292.0
-offset_top = -79.0
+offset_left = -391.0
+offset_top = -126.0
 grow_horizontal = 0
 grow_vertical = 0
-script = ExtResource("6_pmig4")
+mouse_filter = 2
 
-[node name="Full_Inventory" type="PanelContainer" parent="HUD/Notification" unique_id=595799240]
-visible = false
+[node name="PanelContainer" type="PanelContainer" parent="HUD/Notification/Full_Inventory" unique_id=595799240]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = -1
-anchor_top = -0.59900004
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.287
-offset_top = 47.321003
-offset_right = 194.00647
-offset_bottom = 47.327
-grow_horizontal = 2
+anchor_bottom = 0.5
+offset_left = 9.049988
+offset_top = -63.0
+offset_right = 444.8722
+offset_bottom = 7.0
+grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HUD/Notification/Full_Inventory" unique_id=687377968]
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Notification/Full_Inventory/PanelContainer" unique_id=687377968]
 layout_mode = 2
 theme_override_constants/margin_left = 17
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 26
 theme_override_constants/margin_bottom = 15
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Notification/Full_Inventory/MarginContainer" unique_id=1652952807]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Notification/Full_Inventory/PanelContainer/MarginContainer" unique_id=1652952807]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="HUD/Notification/Full_Inventory/MarginContainer/HBoxContainer" unique_id=1989881217]
+[node name="TextureRect" type="TextureRect" parent="HUD/Notification/Full_Inventory/PanelContainer/MarginContainer/HBoxContainer" unique_id=1989881217]
 layout_mode = 2
 texture = ExtResource("7_i0f3y")
 expand_mode = 2
 
-[node name="VSeparator" type="VSeparator" parent="HUD/Notification/Full_Inventory/MarginContainer/HBoxContainer" unique_id=128276300]
+[node name="VSeparator" type="VSeparator" parent="HUD/Notification/Full_Inventory/PanelContainer/MarginContainer/HBoxContainer" unique_id=128276300]
 layout_mode = 2
 theme_override_constants/separation = 9
 theme_override_styles/separator = SubResource("StyleBoxLine_i0f3y")
 
-[node name="Label" type="Label" parent="HUD/Notification/Full_Inventory/MarginContainer/HBoxContainer" unique_id=744198627]
+[node name="Label" type="Label" parent="HUD/Notification/Full_Inventory/PanelContainer/MarginContainer/HBoxContainer" unique_id=744198627]
 layout_mode = 2
 text = "Inventory is full"
 label_settings = ExtResource("6_tt13m")
 horizontal_alignment = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/Notification" unique_id=872815472]
-libraries/ = SubResource("AnimationLibrary_q3c3m")
+[node name="pickup_notifications" type="Control" parent="HUD/Notification" unique_id=1427675875]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -833.0
+offset_right = 511.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Notification/pickup_notifications" unique_id=664622329]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Notification/pickup_notifications/MarginContainer" unique_id=588897068]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 43
+alignment = 2
 
 [node name="Head" type="Node3D" parent="." unique_id=826181266]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
@@ -203,9 +312,9 @@ collision_mask = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_gxkk4")
 
-[node name="BEAN" type="MeshInstance3D" parent="." unique_id=1144305064]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1330762675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_4q72s")
+mesh = SubResource("CylinderMesh_q3c3m")
 
 [node name="item_picker" type="Marker3D" parent="." unique_id=919140027]
 

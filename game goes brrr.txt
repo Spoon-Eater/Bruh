@@ -7,6 +7,14 @@ Bruh:
 	# full inventory_popup
 	# draggable items
 	# dropping system
+	----- BASIC INVENTORY SYSTEM DONE! -----
+	# make a hotbar to quick access items
+	make the axe and pickaxe equipable in the equipement tab
+	make the trees and rocks breakables with the right tools
+
+	craft & buildings
+
+
 
 	if the same item is dropped they merge together increasing the number of them
 		with the number showed in the 3D label

@@ -138,3 +138,7 @@ func head_bob(delta) -> Vector3:
 
 func full_inventory_notification():
 	notification.inventory_full()
+func dropped_item_notification():
+	notification.dropped_item()
+func pickup_notification(item_picked_up: item, quantity: int):
+	notification.pickup_notification(item_picked_up, quantity)

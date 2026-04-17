@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://ds0w6pyvcide7"]
+
+[ext_resource type="Texture2D" uid="uid://vekrl41ce5cu" path="res://icon.png" id="1_jwrfh"]
+[ext_resource type="Script" uid="uid://3a3wbuxpk7mw" path="res://sources/UI/pickup_notification_instance/pickup_notification.gd" id="1_yrfmk"]
+[ext_resource type="LabelSettings" uid="uid://8f7y31regh8b" path="res://assets/tres/text.tres" id="2_yrfmk"]
+
+[sub_resource type="Animation" id="Animation_iiq6h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-371.69, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yrfmk"]
+resource_name = "notif"
+length = 3.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25, 3, 3.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-371.69, 0), Vector2(18.682, 0), Vector2(0, 0), Vector2(0, 0), Vector2(-371.69, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 3.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iiq6h"]
+_data = {
+&"RESET": SubResource("Animation_iiq6h"),
+&"notif": SubResource("Animation_yrfmk")
+}
+
+[node name="pickup_notification" type="Control" unique_id=1065973406]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -127.0
+offset_right = 520.0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_yrfmk")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1299649306]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 13
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = -12
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1779688752]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="icon" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=307700537]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_jwrfh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1984577512]
+layout_mode = 2
+text = "x99 Stuff Picked Up"
+label_settings = ExtResource("2_yrfmk")
+horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=59220369]
+libraries/ = SubResource("AnimationLibrary_iiq6h")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,7 +1,9 @@
+res://sources/UI/pickup_notification_instance/
+res://sources/inventory/scripts/
+res://sources/inventory/scenes/
 res://sources/Player/scripts/
 res://sources/test_scene/script/
 res://sources/test_scene/
-res://sources/inventory/scripts/
 res://sources/inventory/scripts/item_resources/
 res://assets/2D/Textures/kenney_prototype-textures/Red/
 res://

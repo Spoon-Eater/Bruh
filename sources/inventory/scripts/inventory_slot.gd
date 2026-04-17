@@ -7,8 +7,10 @@ extends Control
 @onready var item_name = $Details_Panel/Item_Name
 @onready var item_description = $Details_Panel/Item_Description
 @onready var item_rarity = $Details_Panel/Item_Rarity
-@onready var inventory_manager: Node = get_parent().get_parent().get_parent().get_parent().get_parent().inventory_manager
-@onready var player: CharacterBody3D = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_parent()#.item_picker
+@onready var inventory_manager: Node
+@onready var player: CharacterBody3D = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_parent()
+@onready var hotbar: Control
+@onready var grid: GridContainer
 
 const DROPPED_LOOT = preload("uid://dicpyav24qq4f")
 
@@ -22,9 +24,24 @@ var dragged: bool = false
 
 var qty: int = -1
 
+@export var is_hotbar: bool = false
+
 # hides everyting needed to be
 func _ready() -> void:
 	details_panel.hide()
+
+	if not is_hotbar:
+		grid = get_parent()
+		inventory_manager = get_parent().get_parent().get_parent().get_parent().get_parent().inventory_manager
+		hotbar = get_parent().get_parent().get_parent().get_parent().get_parent().hotbar
+		default_size = Vector2(100, 100)
+		hover_size = Vector2(116, 116)
+	else:
+		grid = $"../../../../../TabContainer/Inventory/PanelContainer/GridContainer"
+		hotbar = get_parent().get_parent().get_parent().get_parent()
+		default_size = Vector2(75, 75)
+		hover_size = Vector2(83, 83)
+		custom_minimum_size = default_size
 
 func _process(delta: float) -> void:
 	# displaying the details panel
@@ -39,7 +56,7 @@ func _process(delta: float) -> void:
 
 	if dragged:
 		details_panel.hide()
-		icon.global_position = get_global_mouse_position() + Vector2(-50, -50)
+		icon.global_position = get_global_mouse_position() - Vector2(size.x/2, size.y/2)
 
 # self exp
 func set_empty_slot():
@@ -93,25 +110,28 @@ func _on_item_button_button_up() -> void:
 		_try_drop()
 
 func _try_drop() -> void:
-	var grid = get_parent()
 	var target_slot = null
 	for slot in grid.get_children():
-		if slot == self:
-			continue
 		var rect = Rect2(slot.global_position, slot.size)
 		if rect.has_point(get_global_mouse_position()):
 			target_slot = slot
 			break
+	for hotslot in hotbar.h_box_container.get_children():
+		var rect = Rect2(hotslot.global_position, hotslot.size)
+		if rect.has_point(get_global_mouse_position()):
+			target_slot = hotslot
+			break
 	if target_slot != null:
 		var temp_item: item = target_slot.current_item
-		target_slot.set_item(current_item, inventory_manager.check_for_item(current_item)[1])
-		inventory_manager.update_a_slot(target_slot.name.to_int(), current_item, inventory_manager.check_for_item(current_item)[1])
+		var temp_qty = target_slot.qty
+		target_slot.set_item(current_item, qty)
+		inventory_manager.update_a_slot(target_slot.name.to_int(), current_item, qty, target_slot.is_hotbar)
 		if inventory_manager.check_for_item(temp_item) != [null]:
-			set_item(temp_item, inventory_manager.check_for_item(temp_item)[1])
-			inventory_manager.update_a_slot(name.to_int(), temp_item, inventory_manager.check_for_item(temp_item)[1])
+			set_item(temp_item, temp_qty)
+			inventory_manager.update_a_slot(name.to_int(), temp_item, temp_qty, is_hotbar)
 		else:
 			set_empty_slot()
-			inventory_manager.update_a_slot(name.to_int(), preload("uid://jqkete66xnjp"), -1)
+			inventory_manager.update_a_slot(name.to_int(), preload("uid://jqkete66xnjp"), -1, is_hotbar)
 	else: drop_item()
 	icon.top_level = false
 	icon.position = Vector2.ZERO
@@ -124,10 +144,11 @@ func drop_item():
 	get_tree().get_root().add_child(dropping_item)
 	dropping_item.global_transform = player.global_transform
 	set_empty_slot()
-	inventory_manager.update_a_slot(name.to_int(), preload("uid://jqkete66xnjp"), -1)
+	inventory_manager.update_a_slot(name.to_int(), preload("uid://jqkete66xnjp"), -1, is_hotbar)
 	icon.top_level = false
 	icon.position = Vector2.ZERO
 	icon.size = Vector2(100, 100)
+	player.dropped_item_notification()
 
 # check if the mouse is hovering the slot
 func _on_item_button_mouse_entered() -> void:

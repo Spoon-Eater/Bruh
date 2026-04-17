@@ -81,6 +81,7 @@ func _process(delta: float) -> void:
 # item pickup logic
 func pickup_item():
 # send the current_item var in the inventory and destroy itself
+	print("hellothere!")
 	if player.Inventory:
 		if current_item.is_stackable:
 			# where do i stack it ?
@@ -102,6 +103,7 @@ func pickup_item():
 						where = has_empty_slot[1]
 						send_item_to_inventory(current_item, leftover_quantity, where)
 					else:
+						picked_up = false
 						animation_player.stop()
 						animation_player.play("partly_picked_up")
 						item_quantity = leftover_quantity
@@ -114,6 +116,7 @@ func pickup_item():
 					var where: int = has_empty_slot[1]
 					send_item_to_inventory(current_item, item_quantity, where)
 				else:
+					picked_up = false
 					animation_player.stop()
 					animation_player.play("partly_picked_up")
 					player.full_inventory_notification()
@@ -124,6 +127,7 @@ func pickup_item():
 				var where: int = has_empty_slot[1]
 				send_item_to_inventory(current_item, item_quantity, where)
 			else:
+				picked_up = false
 				animation_player.stop()
 				animation_player.play("partly_picked_up")
 				player.full_inventory_notification()
@@ -133,6 +137,7 @@ func send_item_to_inventory(what, how_many, where, destroy_self: bool = true):
 		item_pickup_procedural_anim_launched = true
 		_3d_label.hide()
 		quantity_label.hide()
+		player.pickup_notification(current_item, item_quantity)
 		await get_tree().create_timer(1).timeout
 		self.queue_free()
 

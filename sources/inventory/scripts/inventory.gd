@@ -54,6 +54,10 @@ func check_for_empty_slot() -> Array:
 	return_array = [is_full, slot_pos]
 	return return_array
 
-func update_a_slot(slot_to_update: int, data: item, quantity: int):
-	inventory_data[slot_to_update] = data
-	inventory_quantities[slot_to_update] = quantity
+func update_a_slot(slot_to_update: int, data: item, quantity: int, hotbar_slot: bool = false):
+	if hotbar_slot:
+		inventory_ui.hotbar.update_a_hotbar_slot(slot_to_update, data, quantity)
+		return
+	else:
+		inventory_data[slot_to_update] = data
+		inventory_quantities[slot_to_update] = quantity
