@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="item" format=3 uid="uid://yjk3cretvi1h"]
+
+[ext_resource type="PackedScene" uid="uid://u8wxbjigb3p2" path="res://assets/3D/Tools/wooden_bow.blend" id="1_8s2hw"]
+[ext_resource type="Script" uid="uid://cp7vcgvu32xl" path="res://sources/inventory/scripts/item_resource.gd" id="1_qothv"]
+[ext_resource type="Texture2D" uid="uid://yx822no01rn8" path="res://sources/inventory/item_icons/png/wooden_bow.png" id="2_ds04r"]
+
+[resource]
+script = ExtResource("1_qothv")
+id = 6
+_name = "Wooden Bow"
+description = "Pew Pew"
+type = "Tools"
+rarity = "Meh"
+icon = ExtResource("2_ds04r")
+dropped_model = ExtResource("1_8s2hw")
+_3D_position = Vector3(-0.16793704, 0.23909569, 0)
+_3D_scale = Vector3(1.4049999, 1.4049999, 1.405)
+_3D_rotation = Vector3(0, 0, 0.14885914)
+metadata/_custom_type_script = "uid://cp7vcgvu32xl"

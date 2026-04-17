@@ -10,6 +10,7 @@
 [ext_resource type="LabelSettings" uid="uid://c8ur1cawg4lcm" path="res://assets/tres/title.tres" id="6_tt13m"]
 [ext_resource type="Texture2D" uid="uid://cda1qdrsbq8ls" path="res://assets/2D/icons/warning.png" id="7_i0f3y"]
 [ext_resource type="Texture2D" uid="uid://dqgqpdqmugpwh" path="res://assets/2D/icons/dropped.png" id="9_q3c3m"]
+[ext_resource type="Script" uid="uid://x523l1u21kq6" path="res://sources/Player/scripts/item_manager.gd" id="11_q2fue"]
 
 [sub_resource type="Animation" id="Animation_q3c3m"]
 length = 0.001
@@ -307,6 +308,12 @@ fov = 93.0
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 target_position = Vector3(0, -3, 0)
 collision_mask = 4
+
+[node name="item_manager" type="Node3D" parent="Head/camera" unique_id=1897583160]
+script = ExtResource("11_q2fue")
+
+[node name="item_position" type="Marker3D" parent="Head/camera/item_manager" unique_id=490868246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53228617, -0.62327766, -0.61656356)
 
 [node name="MeshCol" type="CollisionShape3D" parent="." unique_id=555057042]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

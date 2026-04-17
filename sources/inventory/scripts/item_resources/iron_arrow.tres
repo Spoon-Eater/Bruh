@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="item" format=3 uid="uid://bvqqjcdfkadf"]
+
+[ext_resource type="Texture2D" uid="uid://cfrvxv5hublce" path="res://sources/inventory/item_icons/png/iron_arrow.png" id="1_5si8f"]
+[ext_resource type="Script" uid="uid://cp7vcgvu32xl" path="res://sources/inventory/scripts/item_resource.gd" id="1_eygha"]
+[ext_resource type="PackedScene" uid="uid://bjmrff6mfkt7k" path="res://assets/3D/Tools/iron_arrow.blend" id="1_wxwr2"]
+
+[resource]
+script = ExtResource("1_eygha")
+id = 7
+_name = "Iron Arrow"
+description = "A row"
+type = "Resource"
+rarity = "Meh"
+icon = ExtResource("1_5si8f")
+dropped_model = ExtResource("1_wxwr2")
+_3D_rotation = Vector3(-0.03654715, -1.5707964, 1.5626281)
+is_stackable = true
+max_stack_number = 100
+metadata/_custom_type_script = "uid://cp7vcgvu32xl"

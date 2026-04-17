@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_aj26f")
+id = -1
 _name = "empty_slot"
 description = "<NULL>"
 type = "Resource"

@@ -33,7 +33,7 @@
 			],
 			"translation":[
 				0.269507497549057,
-				0,
+				0.05065549165010452,
 				0
 			]
 		}
@@ -55,7 +55,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Mesh",
+			"name":"Cube",
 			"primitives":[
 				{
 					"attributes":{
@@ -74,7 +74,7 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":640,
+			"count":313,
 			"max":[
 				0.9166667461395264,
 				6.488441467285156,
@@ -90,19 +90,19 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":640,
+			"count":313,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":640,
+			"count":313,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5126,
-			"count":640,
+			"count":313,
 			"type":"VEC4"
 		},
 		{
@@ -115,38 +115,38 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":7680,
+			"byteLength":3756,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":7680,
-			"byteOffset":7680,
+			"byteLength":3756,
+			"byteOffset":3756,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":5120,
-			"byteOffset":15360,
+			"byteLength":2504,
+			"byteOffset":7512,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":10240,
-			"byteOffset":20480,
+			"byteLength":5008,
+			"byteOffset":10016,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":1920,
-			"byteOffset":30720,
+			"byteOffset":15024,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":32640,
+			"byteLength":16944,
 			"uri":"wooden_axe-7931672f426200fd1b135e87062ed361.bin"
 		}
 	]

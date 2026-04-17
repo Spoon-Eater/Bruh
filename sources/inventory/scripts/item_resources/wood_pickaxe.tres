@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="item" format=3 uid="uid://d2jx7iy1ydrts"]
+
+[ext_resource type="Script" uid="uid://cp7vcgvu32xl" path="res://sources/inventory/scripts/item_resource.gd" id="1_dty1q"]
+[ext_resource type="PackedScene" uid="uid://dtviw8cbmeom5" path="res://assets/3D/Tools/wooden_pickaxe.blend" id="1_eud3g"]
+[ext_resource type="Texture2D" uid="uid://vekrl41ce5cu" path="res://icon.png" id="2_1gghl"]
+
+[resource]
+script = ExtResource("1_dty1q")
+id = 5
+_name = "Wood Pickaxe"
+description = "Pick Pick"
+type = "Tools"
+rarity = "Shit"
+icon = ExtResource("2_1gghl")
+dropped_model = ExtResource("1_eud3g")
+_3D_position = Vector3(0.05671358, -0.11758673, -0.17360854)
+_3D_rotation = Vector3(0, 0, 1.3942039)
+metadata/_custom_type_script = "uid://cp7vcgvu32xl"

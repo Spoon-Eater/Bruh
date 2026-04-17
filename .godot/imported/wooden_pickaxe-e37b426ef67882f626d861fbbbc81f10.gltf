@@ -6,6 +6,10 @@
 	"scene":0,
 	"scenes":[
 		{
+			"extras":{
+				"uuid":"8761918d-fbd6-4cc0-b1de-3d6009b2ca8e",
+				"assets reported":{}
+			},
 			"name":"Scene",
 			"nodes":[
 				0
@@ -15,7 +19,23 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Pikky"
+			"name":"Pikky",
+			"rotation":[
+				0,
+				0,
+				-0.7071068286895752,
+				0.7071068286895752
+			],
+			"scale":[
+				0.05834444984793663,
+				0.05834444984793663,
+				0.05834444984793663
+			],
+			"translation":[
+				0.29936325550079346,
+				0.07699669897556305,
+				0
+			]
 		}
 	],
 	"materials":[
@@ -35,7 +55,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Mesh",
+			"name":"Cube",
 			"primitives":[
 				{
 					"attributes":{
@@ -54,7 +74,7 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":800,
+			"count":385,
 			"max":[
 				0.9166667461395264,
 				5.939814567565918,
@@ -70,19 +90,19 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":800,
+			"count":385,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":800,
+			"count":385,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5126,
-			"count":800,
+			"count":385,
 			"type":"VEC4"
 		},
 		{
@@ -95,38 +115,38 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":9600,
+			"byteLength":4620,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":9600,
-			"byteOffset":9600,
+			"byteLength":4620,
+			"byteOffset":4620,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":6400,
-			"byteOffset":19200,
+			"byteLength":3080,
+			"byteOffset":9240,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":12800,
-			"byteOffset":25600,
+			"byteLength":6160,
+			"byteOffset":12320,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":2400,
-			"byteOffset":38400,
+			"byteOffset":18480,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":40800,
+			"byteLength":20880,
 			"uri":"wooden_pickaxe-e37b426ef67882f626d861fbbbc81f10.bin"
 		}
 	]

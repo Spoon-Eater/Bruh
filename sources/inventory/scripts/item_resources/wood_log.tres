@@ -13,6 +13,7 @@ type = "Resource"
 rarity = "Shit"
 icon = ExtResource("1_xsq6a")
 dropped_model = ExtResource("1_cps73")
+_3D_position = Vector3(0.09025121, 0, 0)
 is_stackable = true
 max_stack_number = 50
 metadata/_custom_type_script = "uid://cp7vcgvu32xl"

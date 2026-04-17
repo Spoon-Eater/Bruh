@@ -1,0 +1,25 @@
+res://assets/2D/Textures/kenney_prototype-textures/grid.tres::7d59290535b3219f303e78ffa278518e::1776184976::res://.godot/exported/133200997/export-3f5aed20fb54fea59f541cdcb5021511-grid.res
+res://assets/tres/environment.tres::d9f54acfe60abb687894990e01a0a662::1776423897::res://.godot/exported/133200997/export-3b7ad6e6821bb9d3872f8ae2496222d1-environment.res
+res://assets/tres/inventory_slot.tres::b5e0d2f43dc4e5538095063b38420ad0::1726860566::res://.godot/exported/133200997/export-3359c2edfbfbcd437e8ff8b9d0a83e33-inventory_slot.res
+res://assets/tres/style_box_flat.tres::8175418bdc3e8fbf426c63730ad233e1::1725562914::res://.godot/exported/133200997/export-be586379ff824afd144d93d4a6f50de8-style_box_flat.res
+res://assets/tres/text.tres::a8c976444ae56e9c413029c1ae275d63::1776185069::res://.godot/exported/133200997/export-983085092598ccb84f58a35148d915f5-text.res
+res://assets/tres/title.tres::042e1987f74f634bb40994c4a4aa25fe::1776185069::res://.godot/exported/133200997/export-7579affd467cb180963207c8b91540c6-title.res
+res://sources/inventory/scenes/dropped_loot.tscn::54996a80275f8fd0106d4d443c464eff::1776426989::res://.godot/exported/133200997/export-25b1cebdc88289634ca52e38f78c0ee7-dropped_loot.scn
+res://sources/inventory/scenes/inventory.tscn::d838c18e433e9d0b9b4eedcb457c5173::1776426337::res://.godot/exported/133200997/export-d1f87d49642cc2af7b7bfaefa0cdf126-inventory.scn
+res://sources/inventory/scenes/inventory_slot.tscn::32718071b89532fd4fd02a8e527ce021::1776426103::res://.godot/exported/133200997/export-5468464fa576f7df606a76e575a26c45-inventory_slot.scn
+res://sources/inventory/scenes/particles.tscn::6e98d0ed983968c1d6b2543b92c349d8::1776341111::res://.godot/exported/133200997/export-d903d58d12d7ac7424c9e935b120c238-particles.scn
+res://sources/inventory/scripts/item_resources/apple.tres::e3249baa32f16470fe426ecc758593cc::1776339397::res://.godot/exported/133200997/export-f6d53ea39adfd27a2291433c958854a7-apple.res
+res://sources/inventory/scripts/item_resources/empty_slot.tres::5383a63bc472a7551cc7a75a3177f69a::1776339397::res://.godot/exported/133200997/export-a37b70222ed24c21648e89665a7056b8-empty_slot.res
+res://sources/inventory/scripts/item_resources/rock.tres::4bb67eaaf8c8a9e6a7b356b46bd1a0fc::1776359941::res://.godot/exported/133200997/export-f462131ab7b5ec926bc821c4c0c3584e-rock.res
+res://sources/inventory/scripts/item_resources/wooden_axe.tres::4fa272109dd05276791522d134fa4837::1776339665::res://.godot/exported/133200997/export-c977539490716b21560e4ef311609f01-wooden_axe.res
+res://sources/inventory/scripts/item_resources/wood_log.tres::2f385fcba8eec266bd2aa1305fb53154::1776241925::res://.godot/exported/133200997/export-824566cb352bcaccc59182513033e46f-wood_log.res
+res://sources/Player/player.tscn::732f74b7c3b4afc4696f2923c9eb1e30::1776425817::res://.godot/exported/133200997/export-c603eaed4042b07ca7c92c1d16d89301-player.scn
+res://sources/test_scene/test_scene.tscn::7f874b33bd67524363763070d2573782::1776202041::res://.godot/exported/133200997/export-86a0842942147d5b1fcfaffa58324c28-test_scene.scn
+res://sources/UI/crosshair/crosshair.tscn::ac8120c502a1410191466bdc2d61f137::1776185566::res://.godot/exported/133200997/export-32aab75fc9cf717b0c68526fc3bb56c9-crosshair.scn
+res://sources/UI/FPS Meter/fps_meter.tscn::e357236f6aaaddf1a13ac610632b44e3::1776185103::res://.godot/exported/133200997/export-0195d18aeb4fc5b679916c756227bb4b-fps_meter.scn
+res://sources/UI/Pause/pause_menu.tscn::faff38519dde371cdabf37eda5e4dc67::1776185095::res://.godot/exported/133200997/export-d8b718b7785580200e3d417f32487b65-pause_menu.scn
+res://sources/UI/pickup_notification_instance/pickup_notification.tscn::478f19dc88ffc10110c93b1aed11f9b3::1776425387::res://.godot/exported/133200997/export-b5a736590dd784a554fb91b8d91779c2-pickup_notification.scn
+res://sources/World/Harvestable/rocks1.tscn::5530093d2afbf5fcf35d1c6281ce3101::1776185280::res://.godot/exported/133200997/export-19e90f2efa4d3cd58178da02482933d9-rocks1.scn
+res://sources/World/Harvestable/tree1.tscn::ce53cedd690e35d0ce007102ea5f16c3::1776185280::res://.godot/exported/133200997/export-d02fcfadb8876652e3ad8977b592608d-tree1.scn
+res://sources/World/NPC/npc_test.tscn::d37273a9b84b27a1b785ee81f73d9fef::1776189011::res://.godot/exported/133200997/export-79bdb874c97885076093165e44fb7c6d-npc_test.scn
+res://sources/World/world.tscn::be370e985f13463e1f7a9de502cfa0a6::1776359941::res://.godot/exported/133200997/export-fa491220f9eff446d362ffe86bc6045f-world.scn

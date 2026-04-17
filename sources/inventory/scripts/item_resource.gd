@@ -14,6 +14,9 @@ extends Resource
 @export_group("Look")
 @export var icon: CompressedTexture2D
 @export var dropped_model: PackedScene
+@export var _3D_position: Vector3 = Vector3.ZERO
+@export var _3D_scale: Vector3 = Vector3(1, 1, 1)
+@export var _3D_rotation: Vector3 = Vector3.ZERO
 
 @export_group("Quantity")
 @export var is_stackable: bool

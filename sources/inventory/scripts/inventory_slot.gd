@@ -11,6 +11,7 @@ extends Control
 @onready var player: CharacterBody3D = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().get_parent()
 @onready var hotbar: Control
 @onready var grid: GridContainer
+@onready var slot_border: PanelContainer = $Slot/SlotBorder
 
 const DROPPED_LOOT = preload("uid://dicpyav24qq4f")
 
@@ -42,6 +43,11 @@ func _ready() -> void:
 		default_size = Vector2(75, 75)
 		hover_size = Vector2(83, 83)
 		custom_minimum_size = default_size
+
+func update_panel_color(color = "white"):
+	if color == "white": color = preload("uid://bpabkib8t7jrm")
+	else: color = preload("uid://ct4b4t2f4wf04")
+	slot_border["theme_override_styles/panel"] = color
 
 func _process(delta: float) -> void:
 	# displaying the details panel
@@ -152,8 +158,10 @@ func drop_item():
 
 # check if the mouse is hovering the slot
 func _on_item_button_mouse_entered() -> void:
+	update_panel_color("white")
 	hovering = true
 	details_panel.visible = true
 func _on_item_button_mouse_exited() -> void:
+	update_panel_color("black")
 	hovering = false
 	details_panel.visible = false

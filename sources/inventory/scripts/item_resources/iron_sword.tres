@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="item" format=3 uid="uid://cdjgiyxn26myk"]
+
+[ext_resource type="Script" uid="uid://cp7vcgvu32xl" path="res://sources/inventory/scripts/item_resource.gd" id="1_0h1yc"]
+[ext_resource type="PackedScene" uid="uid://ddtrkw5nvchbp" path="res://assets/3D/Tools/iron_sword.blend" id="1_nfm13"]
+[ext_resource type="Texture2D" uid="uid://c88j4bljou7n7" path="res://sources/inventory/item_icons/png/iron_sword.png" id="2_x7nuj"]
+
+[resource]
+script = ExtResource("1_0h1yc")
+id = 8
+_name = "Iron Sword"
+description = "A sword !"
+type = "Tools"
+rarity = "Meh"
+icon = ExtResource("2_x7nuj")
+dropped_model = ExtResource("1_nfm13")
+_3D_position = Vector3(0.0765996, 0.31453264, -0.10711098)
+_3D_rotation = Vector3(-0.040116325, -0.04891047, 1.4283144)
+metadata/_custom_type_script = "uid://cp7vcgvu32xl"

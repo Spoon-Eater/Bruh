@@ -81,7 +81,6 @@ func _process(delta: float) -> void:
 # item pickup logic
 func pickup_item():
 # send the current_item var in the inventory and destroy itself
-	print("hellothere!")
 	if player.Inventory:
 		if current_item.is_stackable:
 			# where do i stack it ?
@@ -103,7 +102,6 @@ func pickup_item():
 						where = has_empty_slot[1]
 						send_item_to_inventory(current_item, leftover_quantity, where)
 					else:
-						picked_up = false
 						animation_player.stop()
 						animation_player.play("partly_picked_up")
 						item_quantity = leftover_quantity

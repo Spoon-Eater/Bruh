@@ -9,7 +9,8 @@ Bruh:
 	# dropping system
 	----- BASIC INVENTORY SYSTEM DONE! -----
 	# make a hotbar to quick access items
-	make the axe and pickaxe equipable in the equipement tab
+	make an animation called "use" in every item that can be used and play it whenever we M1 click when equipped with
+		the item
 	make the trees and rocks breakables with the right tools
 
 	craft & buildings
